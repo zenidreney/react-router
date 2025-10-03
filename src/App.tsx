@@ -4,7 +4,7 @@ import './App.css'
 
 function Layout() {
 
-  const activeStyle = {
+  const activeStyles = {
     fontWeight: "bold",
     textDecoration: "underline",
     color: "red"
@@ -12,32 +12,22 @@ function Layout() {
 
   return (
     <div>
-      <h3>Welcome to my page!</h3>
+
+      <h1>React Router Template</h1>
       <nav>
-        <NavLink
-          to="/"
-          style={({ isActive }) => isActive ? activeStyle : undefined}
-        >
+        <NavLink to="/" style={({ isActive }) => isActive ? activeStyles : undefined}>
           Home
         </NavLink>
-
-        <NavLink
-          to="/about"
-          style={({ isActive }) => isActive ? activeStyle : undefined}
-        >
+        <NavLink to="/about" style={({ isActive }) => isActive ? activeStyles : undefined}>
           About
         </NavLink>
-
-        <NavLink
-          to="/contact"
-          style={({ isActive }) => isActive ? activeStyle : undefined}
-        >
+        <NavLink to="/contact" style={({ isActive }) => isActive ? activeStyles : undefined}>
           Contact
         </NavLink>
-
       </nav>
       <Outlet />
     </div>
+
   )
 };
 
