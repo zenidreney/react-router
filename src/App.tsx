@@ -1,25 +1,81 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route, NavLink, Outlet } from "react-router";
 
 import './App.css'
 
+function Layout() {
+
+  const activeStyle = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "red"
+  }
+
+  return (
+    <div>
+      <h3>Welcome to my page!</h3>
+      <nav>
+        <NavLink
+          to="/"
+          style={({ isActive }) => isActive ? activeStyle : undefined}
+        >
+          Home
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          style={({ isActive }) => isActive ? activeStyle : undefined}
+        >
+          About
+        </NavLink>
+
+        <NavLink
+          to="/contact"
+          style={({ isActive }) => isActive ? activeStyle : undefined}
+        >
+          Contact
+        </NavLink>
+
+      </nav>
+      <Outlet />
+    </div>
+  )
+};
+
+function Home() {
+  return (
+    <p>I am home</p>
+  )
+}
+
+function About() {
+  return (
+    <p>I am About</p>
+  )
+}
+
+function Contact() {
+  return (
+    <p>I am Contact</p>
+  )
+}
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-  
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+
+
+        </Routes>
+
+      </BrowserRouter>
+
     </>
   )
 }
