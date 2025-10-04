@@ -1,6 +1,10 @@
 import { BrowserRouter, Routes, Route, NavLink, Outlet } from "react-router";
-
-import './App.css'
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Contact from "./pages/Contact"
+import Products from "./pages/Products"
+import ProductDetails from "./pages/ProductDetails"
+import "./App.css"
 
 function Layout() {
 
@@ -11,9 +15,9 @@ function Layout() {
   }
 
   return (
-    <div>
+    <main className="main-container">
 
-      <h1>React Router Template</h1>
+      <h1>Mock E-Plant Shop</h1>
       <nav>
         <NavLink to="/" style={({ isActive }) => isActive ? activeStyles : undefined}>
           Home
@@ -24,30 +28,16 @@ function Layout() {
         <NavLink to="/contact" style={({ isActive }) => isActive ? activeStyles : undefined}>
           Contact
         </NavLink>
+        <NavLink to="/products" style={({ isActive }) => isActive ? activeStyles : undefined}>
+          Products
+        </NavLink>
       </nav>
       <Outlet />
-    </div>
+    </main>
 
   )
 };
 
-function Home() {
-  return (
-    <p>I am home</p>
-  )
-}
-
-function About() {
-  return (
-    <p>I am About</p>
-  )
-}
-
-function Contact() {
-  return (
-    <p>I am Contact</p>
-  )
-}
 
 function App() {
 
@@ -59,9 +49,9 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="products" element={<Products />} />
+            <Route path="products/:id" element={<ProductDetails />} />
           </Route>
-
-
         </Routes>
 
       </BrowserRouter>
