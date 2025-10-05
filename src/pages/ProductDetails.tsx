@@ -26,14 +26,14 @@ export default function ProductDetails() {
                     <Badge variant="pill" color="grey">
                         <a href={herb.urlLink}>more info</a>
                     </Badge>}
-              
             >
-                <>
-                    <p>My name is {herb.name}</p>
-                    <p>My benefits are {herb.benefits.join(", ")} </p>
 
-                    {herb.isCulinary ? <Badge>Culinary</Badge> : <Badge color="red">Not edible</Badge>}
-                </>
+                <p>My name is {herb.name}</p>
+                <p>My benefits are {herb.benefits.join(", ")} </p>
+
+                {herb.isCulinary ? <Badge>Culinary</Badge>
+                    : <Badge color="red">Not edible</Badge>}
+
             </HerbDetailContainer>
 
         </>

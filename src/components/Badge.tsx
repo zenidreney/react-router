@@ -1,10 +1,10 @@
 import "./Badge.css"
 import classnames from "classnames"
-import type { JSX } from "react"
+import type { ReactNode } from "react"
 
 
 export type BadgeProps = {
-    children?: string | JSX.Element
+    children?: ReactNode
     color?: string
     variant?: string
 }

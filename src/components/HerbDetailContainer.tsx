@@ -1,5 +1,5 @@
 import "./HerbDetailContainer.css"
-import type { JSX } from "react"
+import type { ReactNode } from "react"
 
 const defaultValues = {
 
@@ -13,11 +13,11 @@ const defaultValues = {
 
 export type HerbDetailProps = {
 
-    children?: string | JSX.Element
+    children?: ReactNode
     imgSrc?: string
     bgColor?: string
     name?: string
-    title?: string | JSX.Element
+    title?: string | ReactNode
 
 }
 
@@ -38,12 +38,12 @@ export default function HerbDetailContainer({
             </div>
 
             <div className="text-container">
-                <blockquote>
+                <div>
                     {children}
-                </blockquote>
+                </div>
                 <div className="info-container" >
                     <p className="name">{name} </p>
-                    <p className="location">{title}</p>
+                    <div className="title">{title}</div>
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Products from "./pages/Products"
 import ProductDetails from "./pages/ProductDetails"
+import NotFound from "./pages/NotFound"
 import "./App.css"
 
 function Layout() {
@@ -51,6 +52,8 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="products" element={<Products />} />
             <Route path="products/:herbname" element={<ProductDetails />} />
+
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
 
