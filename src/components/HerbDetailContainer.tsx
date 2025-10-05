@@ -39,7 +39,7 @@ export default function HerbDetailContainer({
 
             <div className="text-container">
                 <blockquote>
-                    <p>{children}</p>
+                    {children}
                 </blockquote>
                 <div className="info-container" >
                     <p className="name">{name} </p>

@@ -7,11 +7,10 @@ import type { Herb } from "../data"
 
 export default function ProductDetails() {
 
-    const { id } = useParams<{ id: string }>()
+    const { herbname } = useParams<{ herbname: string }>()
     //console.log(id)
-    const herbId = Number(id)
 
-    const herb: Herb | undefined = herbsData.find(h => h.id === herbId)
+    const herb: Herb | undefined = herbsData.find(h => h.name.toLowerCase() === herbname)
 
     if (!herb) {
         return <p>This herb is not in the database</p>

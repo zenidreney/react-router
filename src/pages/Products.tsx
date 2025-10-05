@@ -7,7 +7,7 @@ export default function Products() {
 
     const herbEls = herbsData.map(herb => {
         return (
-            <Link to={`/products/${herb.id}`} >
+            <Link to={`/products/${herb.name.toLocaleLowerCase()}`} key={herb.id} >
                 <img className="generic-img" src={`/images/${herb.image}`} alt={herb.alt}/>
                 <p>
                     I am herb {herb.id} my name is {herb.name}
