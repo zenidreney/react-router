@@ -21,7 +21,6 @@ export type HerbDetailProps = {
     bgColor?: string
     name?: string
     price?: number
-    button?: string | ReactNode
     isCulinary?: boolean
 
 }
@@ -33,7 +32,6 @@ export default function HerbDetailContainer({
     bgColor = defaultValues.bgColor,
     name = defaultValues.name,
     price = defaultValues.price,
-    button = defaultValues.button,
     isCulinary = defaultValues.isCulinary
 
 }: HerbDetailProps) {
@@ -47,15 +45,16 @@ export default function HerbDetailContainer({
             <div className="text-container">
                 <div className="herb-info">
                     <h1>{name}</h1>
-                    {isCulinary ? <Badge>Culinary</Badge>
-                        : <Badge color="red">Not edible</Badge>}
+                    <div className="badge-container">
+                        {isCulinary ? <Badge>Culinary</Badge>
+                            : <Badge color="red">Not edible</Badge>}
+                    </div>
+                    <div className="info-container" >
+                        <p className="price">{price} <span>€/pack</span></p>
+                    </div>
                 </div>
-                <div>
+                <div className="content">
                     {children}
-                </div>
-                <div className="info-container" >
-                    <p className="price">{price} €/pack</p>
-                    {button}
                 </div>
             </div>
         </div>

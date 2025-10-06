@@ -1,22 +1,35 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+p,
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+
 button {
     border: none;
     padding: 1em 2em;
+    margin-block: 1em 0.3em;
     border-radius: 5px;
 }
 
 div.testimonial-container {
-    font-family: Inter;
+    font-family: Work-sans, sans-serif;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 32px;
     color: #ffffff;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     border-radius: 5px;
-    max-width: 720px;
+    max-width: 920px;
     margin: 10% auto 15%;
 
 }
@@ -28,22 +41,12 @@ svg.testimonial-icon {
 
 
 div.pic-container {
-    display: flex;
-    align-items: center;
-    width: 90%;
-    height: 70%;
-    max-height: 220px;
-    padding-top: 120px; /* Adjust Profile Pic position from the top */
-    overflow: hidden;
-    border-radius: 12px;
-    margin-top: -30%; /* Fine grain position of pic frame */
+    padding: 1.5em 1em 0;
 }
 
 img.profile {
     width: 100%;
-    height: 82%;
     border-radius: 12px;
-    opacity: 0.78;
 
 }
 
@@ -53,13 +56,13 @@ div.text-container {
     gap: 1.5em;
 }
 
-div.text-container > div {
+div.text-container>div {
     margin: 0;
 
 }
 
-div.text-container  {
-    padding: 3%;
+div.text-container {
+    padding: 3% 2% 3% 0;
 }
 
 p.name {
@@ -67,25 +70,52 @@ p.name {
     font-weight: 700;
 }
 
+div.herb-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+
+div.badge-container {
+    flex-grow: 1;
+}
+
+div.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+div.info-container>p {
+    flex-shrink: 0;
+}
+
+div.herb-info,
+div.content {
+    padding-left: 0.75em;
+}
+
 
 /* Media Queries */
 
 @media(min-width: 450px) {
-   
+
     div.testimonial-container {
         flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        margin: 2% 0;
     }
 
     div.pic-container {
-        flex: 0 0 300px;
-        padding: 0;
-        max-height: none;
-        height: 400px;
-        margin: 0.8em 0 0 1em;
-        overflow: visible;
+        display: flex;
+        justify-content: center;
+        padding: 1.5em 1em 1em;
+        max-width: 33%;
+    }
+
+    img.profile {
+        width: 100%;
+        border-radius: 12px;
+
     }
 
 }

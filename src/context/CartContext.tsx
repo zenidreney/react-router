@@ -19,7 +19,6 @@ function CartContextProvider({ children }: CartContextProviderProps) {
 
     const [cartItems, setCartItems] = useState<Herb[]>([])
 
-
     return (
         <CartContext.Provider value={{ cartItems, setCartItems }}>
             {children}
