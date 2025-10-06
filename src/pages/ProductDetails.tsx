@@ -1,6 +1,5 @@
 import { useParams } from "react-router"
 import { herbsData } from "../data"
-import Badge from "../components/Badge"
 import HerbDetailContainer from "../components/HerbDetailContainer"
 
 import type { Herb } from "../data"
@@ -22,18 +21,12 @@ export default function ProductDetails() {
                 imgSrc={`/images/${herb.image}`}
                 bgColor="rgba(48, 51, 48, 0.5)"
                 name={herb.name}
-                title={
-                    <Badge variant="pill" color="grey">
-                        <a href={herb.urlLink}>more info</a>
-                    </Badge>}
+                price={herb.price}
+                button={<button>Buy Now</button>}
+                isCulinary={herb.isCulinary}
             >
-
-                <p>My name is {herb.name}</p>
-                <p>My benefits are {herb.benefits.join(", ")} </p>
-
-                {herb.isCulinary ? <Badge>Culinary</Badge>
-                    : <Badge color="red">Not edible</Badge>}
-
+                <p>{herb.description} </p>
+                <p>Benefits: {herb.benefits.join(", ")} </p>
             </HerbDetailContainer>
 
         </>

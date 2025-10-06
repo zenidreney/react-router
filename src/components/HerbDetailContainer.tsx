@@ -1,5 +1,6 @@
 import "./HerbDetailContainer.css"
 import type { ReactNode } from "react"
+import Badge from "./Badge"
 
 const defaultValues = {
 
@@ -7,7 +8,9 @@ const defaultValues = {
     bgColor: "#2545B5",
     quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit.",
     name: "Some Plant",
-    title: "Medicinal Plants"
+    price: 20,
+    button: <button>More Info</button>,
+    isCulinary: true
 
 }
 
@@ -17,7 +20,9 @@ export type HerbDetailProps = {
     imgSrc?: string
     bgColor?: string
     name?: string
-    title?: string | ReactNode
+    price?: number
+    button?: string | ReactNode
+    isCulinary?: boolean
 
 }
 
@@ -27,7 +32,9 @@ export default function HerbDetailContainer({
     imgSrc = defaultValues.imgSrc,
     bgColor = defaultValues.bgColor,
     name = defaultValues.name,
-    title = defaultValues.title
+    price = defaultValues.price,
+    button = defaultValues.button,
+    isCulinary = defaultValues.isCulinary
 
 }: HerbDetailProps) {
 
@@ -38,12 +45,17 @@ export default function HerbDetailContainer({
             </div>
 
             <div className="text-container">
+                <div className="herb-info">
+                    <h1>{name}</h1>
+                    {isCulinary ? <Badge>Culinary</Badge>
+                        : <Badge color="red">Not edible</Badge>}
+                </div>
                 <div>
                     {children}
                 </div>
                 <div className="info-container" >
-                    <p className="name">{name} </p>
-                    <div className="title">{title}</div>
+                    <p className="price">{price} €/pack</p>
+                    {button}
                 </div>
             </div>
         </div>

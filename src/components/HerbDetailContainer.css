@@ -1,3 +1,9 @@
+button {
+    border: none;
+    padding: 1em 2em;
+    border-radius: 5px;
+}
+
 div.testimonial-container {
     font-family: Inter;
     font-weight: 500;
@@ -11,8 +17,7 @@ div.testimonial-container {
     align-items: center;
     border-radius: 5px;
     max-width: 720px;
-    
-    margin: 50% auto 15%;
+    margin: 10% auto 15%;
 
 }
 
@@ -62,10 +67,6 @@ p.name {
     font-weight: 700;
 }
 
-div.title {
-    font-size: 1rem;
-    font-weight: 500;
-}
 
 /* Media Queries */
 
@@ -73,8 +74,9 @@ div.title {
    
     div.testimonial-container {
         flex-direction: row;
-        margin: 10% 0;
-        max-height: 400px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin: 2% 0;
     }
 
     div.pic-container {
@@ -82,7 +84,7 @@ div.title {
         padding: 0;
         max-height: none;
         height: 400px;
-        margin: 0 0 0 25px;
+        margin: 0.8em 0 0 1em;
         overflow: visible;
     }
 

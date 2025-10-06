@@ -1,4 +1,65 @@
 img.generic-img {
-    width: 145px;
+    width: 15vw;
+    height: 90%;
     border-radius: 4px;
+}
+
+a {
+    color: #161616;
+}
+
+a.badge-link {
+    color: #161616;
+}
+
+div.herb-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+
+div.herb-els-container {
+    position: relative;
+    background: #649173;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgb(219, 213, 164, 0.9), rgb(100, 145, 115, 0.9));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgb(219, 213, 164, 0.9), rgb(100, 145, 115, 0.9));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius: 16px;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+div.herb-els-container::before {
+    content: "";
+    position: absolute;
+    margin: 0 auto;
+    background: #649173;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #DBD5A4, #649173);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #DBD5A4, #649173);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 12px;
+    filter: blur(4px);
+
+    top: -3.5%;
+    left: -5%;
+    bottom: -5%;
+    width: 110%;
+    z-index: -1;
+}
+
+div.generic-herb-el {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
