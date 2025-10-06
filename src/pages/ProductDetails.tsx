@@ -5,8 +5,6 @@ import HerbDetailContainer from "../components/HerbDetailContainer"
 
 import type { Herb } from "../data"
 
-
-
 export default function ProductDetails() {
     
     const { cartItems, setCartItems } = useCart()
@@ -17,9 +15,15 @@ export default function ProductDetails() {
     //console.log(id)
 
     const herb: Herb | undefined = herbsData.find(h => h.name.toLowerCase() === herbname)
-
+    
     if (!herb) {
         return <p>This herb is not in the database</p>
+    }
+    
+    function addToCart() {
+        setCartItems(prev => {
+            return herb ? [...prev, herb] : prev
+        })
     }
 
     return (
@@ -33,7 +37,10 @@ export default function ProductDetails() {
             >
                 <p>{herb.description} </p>
                 <p>Benefits: {herb.benefits.join(", ")} </p>
-                <button>Buy Now</button>
+                <button 
+                    className="buy-btn"
+                    onClick={() => addToCart()}
+                >Buy Now</button>
             </HerbDetailContainer>
 
         </>

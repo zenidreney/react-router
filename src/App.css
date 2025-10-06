@@ -1,6 +1,5 @@
 img.generic-img {
-    width: 15vw;
-    height: 90%;
+    width: 75vw;
     border-radius: 4px;
 }
 
@@ -10,6 +9,10 @@ a {
 
 a.badge-link {
     color: #161616;
+}
+
+button.buy-btn {
+    cursor: pointer;
 }
 
 div.herb-info {
@@ -62,4 +65,11 @@ div.generic-herb-el {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-width: 850px) {
+    img.generic-img {
+        width: 10vw;
+        height: 20vh;
+    }
 }
