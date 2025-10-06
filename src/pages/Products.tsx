@@ -1,8 +1,6 @@
 import { Link } from "react-router"
 import { herbsData } from "../data"
 
-console.log(herbsData)
-
 export default function Products() {
 
     const herbEls = herbsData.map(herb => {
