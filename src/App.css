@@ -150,6 +150,12 @@ div.checkout-container > h2 {
     color:#ffffff;
 }
 
+form.checkout-form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
 
 /* Media Queries for larger screens */
 

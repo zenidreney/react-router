@@ -8,8 +8,8 @@ export default function Products() {
 
     const herbEls = herbsData.map(herb => {
         return (
-            <div className="generic-herb-el-container">
-                <Link to={`/products/${herb.name.toLowerCase()}`} key={herb.id} >
+            <div className="generic-herb-el-container" key={herb.id}>
+                <Link to={`/products/${herb.name.toLowerCase()}`}  >
                     <div className="generic-herb-el">
                         <img className="generic-img profile" src={`/images/${herb.image}`} alt={herb.alt} />
                         <p>

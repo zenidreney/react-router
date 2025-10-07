@@ -1,13 +1,57 @@
-import { Link } from "react-router"
+import { useState } from "react"
+import { Link, useNavigate } from "react-router"
 import { useCart } from "../hooks/useCart"
 
 export default function Checkout() {
 
     const { cartItems, addToCart, removeFromCart } = useCart()
+    const navigate = useNavigate()
 
-    console.log(cartItems)
 
     const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)
+
+    const [formData, setFormData] = useState({
+        name: "",
+        password: "",
+        cardNo: ""
+    })
+
+    function handleFormInput(e: React.ChangeEvent<HTMLInputElement>) {
+        const { name, value } = e.target
+        console.log({ name, value })
+
+        setFormData(prev => {
+            return {
+                ...prev,
+                [name]: value
+            }
+        })
+    }
+
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault()
+
+
+        if (!formData.name || !formData.password || !formData.cardNo) {
+            alert("Please fill in")
+        } else {
+            alert("Your order has been submitted!")
+            console.log("Submitted", {
+                items: cartItems,
+                user: formData
+            })
+            navigate("/thank-you")
+        }
+
+
+
+
+        setFormData({
+            name: "",
+            password: "",
+            cardNo: ""
+        })
+    }
 
     const cartEls = cartItems.map((herb, index) => {
         return (
@@ -29,7 +73,6 @@ export default function Checkout() {
         )
     })
 
-
     return (
         <div>
             <Link to="/" className="to-btn">Back to Home</Link>
@@ -40,6 +83,33 @@ export default function Checkout() {
                     {cartEls}
                 </div>
                 <p>To be charged: {totalPrice} € </p>
+                <form
+                    className="checkout-form"
+                    onSubmit={handleSubmit}>
+                    <label htmlFor="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleFormInput} />
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleFormInput} />
+                    <label htmlFor="cardNo">Card Number</label>
+                    <input
+                        type="text"
+                        inputMode="numeric"
+                        id="cardNo"
+                        name="cardNo"
+                        value={formData.cardNo}
+                        onChange={handleFormInput} />
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </div>
     )

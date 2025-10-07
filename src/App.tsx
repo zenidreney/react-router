@@ -9,6 +9,7 @@ import Products from "./pages/Products"
 import ProductDetails from "./pages/ProductDetails"
 import NotFound from "./pages/NotFound"
 import Checkout from "./pages/Checkout";
+import ThankYou from "./pages/ThankYou";
 
 import "./App.css"
 
@@ -28,6 +29,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Route>
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/thank-you" element={<ThankYou />} />
           </Routes>
         </BrowserRouter>
       </CartContextProvider>
