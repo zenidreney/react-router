@@ -10,14 +10,6 @@ h1 {
     padding: 0;
 }
 
-
-button {
-    border: none;
-    padding: 1em 2em;
-    margin-block: 1em 0.3em;
-    border-radius: 5px;
-}
-
 div.testimonial-container {
     font-family: Work-sans, sans-serif;
     font-weight: 500;

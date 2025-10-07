@@ -6,25 +6,38 @@ import HerbDetailContainer from "../components/HerbDetailContainer"
 import type { Herb } from "../data"
 
 export default function ProductDetails() {
-    
-    const { cartItems, setCartItems } = useCart()
 
-    console.log( {cartItems, setCartItems} )
+    const { addToCart } = useCart()
+
 
     const { herbname } = useParams<{ herbname: string }>()
     //console.log(id)
 
     const herb: Herb | undefined = herbsData.find(h => h.name.toLowerCase() === herbname)
-    
+
     if (!herb) {
         return <p>This herb is not in the database</p>
     }
-    
-    function addToCart() {
+
+    /* function addToCart() {
+        if (!herb) {
+            return
+        }
+
         setCartItems(prev => {
-            return herb ? [...prev, herb] : prev
+
+            const existingCartItem = prev.find(item => item.name === herb.name)
+            //console.log(existingCartItem)
+
+            if (existingCartItem) {
+                return prev.map(item => {
+                    return item.name === herb.name 
+                    ?    { ...item, quantity: item.quantity + 1 } 
+                    :    item
+                })
+            } else return herb ? [...prev, { ...herb, quantity: 1 }] : prev
         })
-    }
+    } */
 
     return (
         <>
@@ -37,9 +50,9 @@ export default function ProductDetails() {
             >
                 <p>{herb.description} </p>
                 <p>Benefits: {herb.benefits.join(", ")} </p>
-                <button 
+                <button
                     className="buy-btn"
-                    onClick={() => addToCart()}
+                    onClick={() => addToCart(herb)}
                 >Buy Now</button>
             </HerbDetailContainer>
 

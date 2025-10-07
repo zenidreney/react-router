@@ -3,10 +3,11 @@ import { useState, createContext, type ReactNode } from "react"
 import type { Herb } from "../data";
 import type { Dispatch, SetStateAction } from "react";
 
+type CartItem = Herb & { quantity: number }
  
 type CartContextType = {
-    cartItems: Herb[],
-    setCartItems: Dispatch<SetStateAction<Herb[]>>
+    cartItems: CartItem[]
+    setCartItems: Dispatch<SetStateAction<CartItem[]>>
 }
 
 type CartContextProviderProps = {
@@ -17,7 +18,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined)
 
 function CartContextProvider({ children }: CartContextProviderProps) {
 
-    const [cartItems, setCartItems] = useState<Herb[]>([])
+    const [cartItems, setCartItems] = useState<CartItem[]>([])
 
     return (
         <CartContext.Provider value={{ cartItems, setCartItems }}>
@@ -28,4 +29,4 @@ function CartContextProvider({ children }: CartContextProviderProps) {
 
 }
 
-export { CartContext, CartContextProvider }
+export { CartContext, CartContextProvider, type CartItem }
