@@ -31,6 +31,7 @@ export default function Home() {
                     <HerbDetailContainer
                         imgSrc={`/images/${herbsData[randomTwo].image}`}
                         name={herbsData[randomTwo].name}
+                        bgColor="#a3581bff"
                         price={herbsData[randomTwo].price}
                         isCulinary={herbsData[randomTwo].isCulinary}
                     >

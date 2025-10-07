@@ -13,12 +13,12 @@ a.badge-link {
 
 a.to-btn,
 p.back-to-p {
-   background-color: rgba(255, 255, 255, 0.6);
-   padding-inline: 1.2em;
-   border-radius: 40px;
-   display: inline-block;
-   margin-inline: 0.25em;
-   cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding-inline: 1.2em;
+    border-radius: 40px;
+    display: inline-block;
+    margin-inline: 0.25em;
+    cursor: pointer;
 }
 
 a.back-to-btn:hover,
@@ -31,7 +31,7 @@ button {
     border-radius: 3px;
     cursor: pointer;
     background-color: #DBD5A4;
-    color:#161616;
+    color: #161616;
     margin-inline: 0.1em;
 
 }
@@ -39,7 +39,7 @@ button {
 button:hover,
 button:focus {
     background-color: #161616;
-    color:#DBD5A4;
+    color: #DBD5A4;
 }
 
 button.buy-btn {
@@ -49,7 +49,7 @@ button.buy-btn {
     border-radius: 5px;
 }
 
-header > h1 {
+header>h1 {
     text-shadow: 1px 1px 2px rgb(106, 158, 28);
 }
 
@@ -65,20 +65,21 @@ section.home {
     text-shadow: 1px 1px 2px grey;
 }
 
-section.home > p:nth-child(odd) {
-     animation: changeColor 35s ease-in-out infinite;
+section.home>p:nth-child(odd) {
+    animation: changeColor 35s ease-in-out infinite;
 }
 
-section.home > p:nth-child(even) {
-     animation: changeColor 45s ease-in-out infinite;
+section.home>p:nth-child(even) {
+    animation: changeColor 45s ease-in-out infinite;
 }
 
-section.home > img {
+section.home>img {
     width: 30%;
     border-radius: 5px;
 }
 
-section.home h3, h4 {
+section.home h3,
+h4 {
     margin: 0;
 }
 
@@ -105,7 +106,7 @@ div.herb-info {
 
 div.herb-els-container {
     position: relative;
-  
+
 
     border-radius: 16px;
     max-width: 800px;
@@ -150,6 +151,7 @@ div.generic-herb-el {
     justify-content: center;
     align-items: center;
 }
+
 p.name-p {
     padding-block: 0.65em;
     font-size: 1.2rem;
@@ -162,8 +164,8 @@ p.back-to-p {
 
 
 div.cart-container {
-   background-color: rgba(255, 255, 255, 0.25);
-    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -171,6 +173,7 @@ div.cart-container {
     width: 55vw;
     padding: 1em 1.2em;
     gap: 1em;
+    box-shadow: 1px 1px 1px rgba(22, 22, 22, 0.2);
 }
 
 div.sub-total-container {
@@ -197,8 +200,8 @@ div.checkout-container {
 
 }
 
-div.checkout-container > h2 {
-    color:#ffffff;
+div.checkout-container>h2 {
+    color: #ffffff;
 }
 
 form.checkout-form {
@@ -225,6 +228,7 @@ div.summary-container {
         width: 50%;
         height: 10vh;
     }
+
     img.cart-img {
         width: 20%;
     }
@@ -233,8 +237,8 @@ div.summary-container {
 
 /* DESKTOP */
 
-@media (min-width: 1250px){
-     img.generic-img {
+@media (min-width: 1250px) {
+    img.generic-img {
         width: 70%;
         height: 20vh;
     }
@@ -248,14 +252,14 @@ div.summary-container {
 
 @keyframes changeColor {
     0% {
-        color:#161616;
+        color: #161616;
     }
+
     50% {
         color: #916477;
     }
-    
+
     100% {
         color: #029b35;
     }
 }
-

@@ -11,7 +11,7 @@ export default function Cart() {
     const cartEls = cartItems.map((herb, index) => {
         return (
             <div key={`${herb.id}-${index}`} className="cart-container">
-                    <img src={`/images/${herb.image}`} alt={herb.alt} className="cart-img profile"/>
+                <img src={`/images/${herb.image}`} alt={herb.alt} className="cart-img profile" />
                 <div className="sub-total-container">
                     {
                         herb.quantity > 1 ?
@@ -23,7 +23,7 @@ export default function Cart() {
                     <button onClick={() => addToCart(herb)}>Add</button>
                     <button onClick={() => removeFromCart(herb)}>Remove</button>
                 </div>
-                
+
             </div>
         )
     })
@@ -31,13 +31,31 @@ export default function Cart() {
     return (
         <>
             <h1>In your cart you have:</h1>
-            {cartEls}
+            <div style={{
+                border: "1px solid rgba(59, 54, 8, 0.4)",
+                borderRadius: "4px",
+                paddingBottom: "0.5em"
 
-            <p>Total Price</p>
-            {totalPrice} €
-            <Link to="/checkout" className="to-btn">Checkout</Link>
+            }}>
+                {cartEls}
+
+                <div style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    padding: "0.2em 0.5em 0"
+                    
+
+                }}>
+                    <div>
+                        <p>Total Price: </p>
+                        <p>{totalPrice} €</p>
+                    </div>
+                <Link to="/checkout" className="to-btn">Checkout</Link>
+                </div>
 
 
+            </div>
         </>
     )
 }
