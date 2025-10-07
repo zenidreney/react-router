@@ -1,19 +1,25 @@
 import { Link } from "react-router"
 import { herbsData } from "../data"
+import { useCart } from "../hooks/useCart"
 
 export default function Products() {
 
+    const { addToCart } = useCart()
+
     const herbEls = herbsData.map(herb => {
         return (
-            <Link to={`/products/${herb.name.toLowerCase()}`} key={herb.id} >
-                <div className="generic-herb-el">
-                    <img className="generic-img profile" src={`/images/${herb.image}`} alt={herb.alt} />
-                    <p>
-                        I am herb {herb.id} my name is {herb.name}
-                    </p>
-                </div>
-
-            </Link>
+            <div className="generic-herb-el-container">
+                <Link to={`/products/${herb.name.toLowerCase()}`} key={herb.id} >
+                    <div className="generic-herb-el">
+                        <img className="generic-img profile" src={`/images/${herb.image}`} alt={herb.alt} />
+                        <p>
+                            {herb.name}
+                        </p>
+                    <p className="back-to-p">Click for more info</p>
+                    </div>
+                </Link>
+                <button onClick={() => addToCart(herb)}>Add to Cart</button>
+            </div>
         )
     })
 

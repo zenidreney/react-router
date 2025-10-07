@@ -19,26 +19,6 @@ export default function ProductDetails() {
         return <p>This herb is not in the database</p>
     }
 
-    /* function addToCart() {
-        if (!herb) {
-            return
-        }
-
-        setCartItems(prev => {
-
-            const existingCartItem = prev.find(item => item.name === herb.name)
-            //console.log(existingCartItem)
-
-            if (existingCartItem) {
-                return prev.map(item => {
-                    return item.name === herb.name 
-                    ?    { ...item, quantity: item.quantity + 1 } 
-                    :    item
-                })
-            } else return herb ? [...prev, { ...herb, quantity: 1 }] : prev
-        })
-    } */
-
     return (
         <>
             <HerbDetailContainer

@@ -1,41 +1,8 @@
 import { useCart } from "../hooks/useCart"
-
-
-
+import { Link } from "react-router"
 
 export default function Cart() {
     const { cartItems, removeFromCart, addToCart } = useCart()
-
-
-
-    /* function removeFromCart(herb: CartItem) {
-        // console.log("Removed, ", herb)
-
-        if (!herb) {
-            return
-        }
-
-        setCartItems(prev => {
-            const existingItem = prev.find(item => item.name === herb.name)
-
-            if (!existingItem) {
-                return prev
-            }
-
-            if (existingItem.quantity > 1) {
-                return prev.map(item => {
-                    return item.name === herb.name ?
-                        { ...item, quantity: item.quantity - 1 } :
-                        item
-                })
-            } else {
-                return prev.filter(item => {
-                    return item.name !== herb.name
-                })
-            }
-        })
-
-    } */
 
     const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)
 
@@ -44,19 +11,19 @@ export default function Cart() {
     const cartEls = cartItems.map((herb, index) => {
         return (
             <div key={`${herb.id}-${index}`} className="cart-container">
-                <div>
+                    <img src={`/images/${herb.image}`} alt={herb.alt} className="cart-img profile"/>
+                <div className="sub-total-container">
                     {
                         herb.quantity > 1 ?
                             <div>{herb.quantity} {herb.name}s</div> :
                             <div>{herb.quantity} {herb.name}</div>
                     }
-                    <div>total price:{herb.price}€</div>
+                    <p>sub-total:{herb.price}€</p>
 
-                </div>
-                <div>
                     <button onClick={() => addToCart(herb)}>Add</button>
                     <button onClick={() => removeFromCart(herb)}>Remove</button>
                 </div>
+                
             </div>
         )
     })
@@ -68,6 +35,7 @@ export default function Cart() {
 
             <p>Total Price</p>
             {totalPrice} €
+            <Link to="/checkout" className="to-btn">Checkout</Link>
 
 
         </>

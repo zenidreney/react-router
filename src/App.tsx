@@ -8,6 +8,7 @@ import Contact from "./pages/Contact"
 import Products from "./pages/Products"
 import ProductDetails from "./pages/ProductDetails"
 import NotFound from "./pages/NotFound"
+import Checkout from "./pages/Checkout";
 
 import "./App.css"
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="products/:herbname" element={<ProductDetails />} />
               <Route path="*" element={<NotFound />} />
             </Route>
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </BrowserRouter>
       </CartContextProvider>

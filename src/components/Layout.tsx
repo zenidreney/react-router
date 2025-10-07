@@ -5,14 +5,17 @@ export default function Layout() {
 
     const activeStyles = {
         fontWeight: "bold",
-        textDecoration: "underline",
-        color: "red"
+        textDecoration: "none",
+        color: "#DBD5A4"
+
     }
 
     return (
         <main className="main-container">
 
-            <h1>Mock E-Plant Shop</h1>
+            <header>
+                <h1>Mock E-Plant Shop</h1>
+            </header>
             <nav>
                 <NavLink to="/" style={({ isActive }) => isActive ? activeStyles : undefined}>
                     Home
@@ -31,7 +34,7 @@ export default function Layout() {
             <Cart />
 
             <Outlet />
-            
+
         </main>
 
     )
