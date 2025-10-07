@@ -9,7 +9,7 @@ export default function Checkout() {
 
     const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)
 
-    const  { formData, setFormData } = useCart()
+    const { formData, setFormData } = useCart()
 
     function handleFormInput(e: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = e.target
@@ -43,8 +43,8 @@ export default function Checkout() {
             items: cartItems
         })
 
-        
-        
+
+
         setFormData({
             name: "",
             cvv: "",
@@ -63,7 +63,7 @@ export default function Checkout() {
                             <div>{herb.quantity} {herb.name}s</div> :
                             <div>{herb.quantity} {herb.name}</div>
                     }
-                    <div>sub-total:{herb.price}€</div>
+                    <div>sub-total: <span className="bold-text">{herb.price} €</span></div>
 
                     <button onClick={() => addToCart(herb)}>Add</button>
                     <button onClick={() => removeFromCart(herb)}>Remove</button>
@@ -82,45 +82,45 @@ export default function Checkout() {
                     {cartItems.length != 0 ?
                         <h2>You are about to buy!</h2> :
                         <h2>Nothing to buy!</h2>
-                        }
+                    }
                     {cartEls}
                 </div>
-                <p>To be charged: {totalPrice} € </p>
-                
-                {cartItems.length != 0 
-                
-                ?
-                    <form
-                    className="checkout-form"
-                    onSubmit={handleSubmit}>
-                    <label htmlFor="name">Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleFormInput} />
-                    <label htmlFor="cvv">CVV</label>
-                    <input
-                        type="password"
-                        id="cvv"
-                        name="cvv"
-                        value={formData.cvv}
-                        onChange={handleFormInput} />
-                    <label htmlFor="cardNo">Card Number</label>
-                    <input
-                        type="text"
-                        inputMode="numeric"
-                        id="cardNo"
-                        name="cardNo"
-                        value={formData.cardNo}
-                        onChange={handleFormInput} />
-                    <button type="submit">Submit</button>
-                </form>
-                
-                :
+                <p className="bold-text">To be charged: {totalPrice} € </p>
 
-                <Link to="/products" className="to-btn">Back to Products</Link>
+                {cartItems.length != 0
+
+                    ?
+                    <form
+                        className="checkout-form"
+                        onSubmit={handleSubmit}>
+                        <label htmlFor="name">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleFormInput} />
+                        <label htmlFor="cvv">CVV</label>
+                        <input
+                            type="password"
+                            id="cvv"
+                            name="cvv"
+                            value={formData.cvv}
+                            onChange={handleFormInput} />
+                        <label htmlFor="cardNo">Card Number</label>
+                        <input
+                            type="text"
+                            inputMode="numeric"
+                            id="cardNo"
+                            name="cardNo"
+                            value={formData.cardNo}
+                            onChange={handleFormInput} />
+                        <button type="submit">Submit</button>
+                    </form>
+
+                    :
+
+                    <Link to="/products" className="to-btn">Back to Products</Link>
                 }
             </div>
         </div>

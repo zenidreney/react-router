@@ -47,7 +47,6 @@ export default function ThankYou() {
             <h4>Summary of your order</h4>
             {summaryEls}
             <Link to="/" className="to-btn">Back to Home</Link>
-
         </div>
     )
 }

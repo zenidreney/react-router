@@ -3,9 +3,10 @@ img.cart-img {
     border-radius: 4px;
 }
 
-a {
-    color: #161616;
+img.cart-img {
+    width: 27%;
 }
+
 
 a.badge-link {
     color: #161616;
@@ -170,7 +171,7 @@ div.cart-container {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 55vw;
+    width: 100%;
     padding: 1em 1.2em;
     gap: 1em;
     box-shadow: 1px 1px 1px rgba(22, 22, 22, 0.2);
@@ -185,8 +186,16 @@ div.parent-checkout-container {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    
     margin: 0 auto;
     max-width: 820px;
+    box-shadow: 12px 12px 12px rgba(22, 22, 22, 0.5);
+    border: 1px solid rgba(22, 22, 22, 0.2);
+    padding-bottom: 2em;
+}
+
+div.parent-checkout-container > p {
+    padding: 1em;
 }
 
 div.checkout-container {
@@ -196,18 +205,29 @@ div.checkout-container {
     align-items: center;
     max-width: 720px;
     margin: 1em auto;
-    padding-bottom: 2em;
 
 }
 
-div.checkout-container>h2 {
-    color: #ffffff;
+div.checkout-container > h2 {
+    color: #161616;
 }
+
+
 
 form.checkout-form {
     display: flex;
     flex-direction: column;
+    min-width: 320px;
     align-self: center;
+    border: 1px solid rgb(0, 0, 0, 0.3);
+    padding: 1em;
+}
+
+form.checkout-form > button {
+    margin-top: 2em;
+    border: 1px solid #161616;
+    align-self: center;
+    padding: 0.6em 1.2em;
 }
 
 div.summary-container {
@@ -215,11 +235,23 @@ div.summary-container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 720px;
+    margin:  0 auto;
     text-align: center;
+
+}
+
+div.summary-container > h4 {
+    margin-bottom: 1em;
+}
+
+div.summary-container > a {
+    margin-top: 1em;
 }
 
 
 /* Media Queries for larger screens */
+
 
 /* TABLET */
 
@@ -245,6 +277,20 @@ div.summary-container {
 
     img.cart-img {
         width: 20%;
+    }
+}
+
+
+/* PHONE LANDSCAPE */
+
+@media (max-width: 720px) and (orientation: landscape) {
+    img.generic-img {
+        width: 50%;
+        height: 20vh;
+    }
+
+    img.cart-img {
+        width: 12%;
     }
 }
 

@@ -28,20 +28,22 @@ a {
     padding: 15px
 }
 
+
 a:hover {
     font-weight: bold;
     text-decoration: none;
 }
 
-/* 
-
-nav > a:first-of-type {
-    margin-left: -15px;
-} */
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+/* UTILITY */
+
+.bold-text {
+    font-weight: 600;
 }
