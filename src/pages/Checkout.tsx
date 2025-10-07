@@ -13,7 +13,7 @@ export default function Checkout() {
 
     function handleFormInput(e: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = e.target
-        console.log({ name, value })
+        //console.log({ name, value })
 
         setFormData(prev => {
             return {
@@ -38,20 +38,19 @@ export default function Checkout() {
             navigate("/thank-you")
         }
 
-
-        setCartItems([])
-        
         setCompletedOrder({
-            name: formData.name,
-            password: formData.password,
-            cardNo: formData.cardNo
+            user: formData,
+            items: cartItems
         })
 
+        
+        
         setFormData({
             name: "",
             password: "",
             cardNo: ""
         })
+        setCartItems([])
     }
 
     const cartEls = cartItems.map((herb, index) => {

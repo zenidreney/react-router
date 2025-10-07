@@ -3,11 +3,24 @@ import { Link } from "react-router"
 
 export default function ThankYou() {
 
-    const { formData, completedOrder, cartItems } = useCart()
+    const { completedOrder } = useCart()
 
-    console.log(formData, completedOrder, cartItems)
+    console.log(completedOrder)
 
-    const summaryEls = cartItems.map((herb, index) => {
+    if(!completedOrder) {
+        return(
+        <div className="summary-container">
+            <h1>Opps no such order</h1>
+            <h3>Try to add products to your cart</h3>
+            <Link to="/" className="to-btn">Back to Home</Link>
+
+        </div>
+        )
+    }
+    
+    const { user, items } = completedOrder
+
+    const summaryEls = items.map((herb, index) => {
         return(
             <div key={`${herb.id}-${index}`} className="cart-container">
                 <img src={`/images/${herb.image}`} alt={herb.alt} className="cart-img profile" />
@@ -24,16 +37,16 @@ export default function ThankYou() {
         )
     }) 
 
-    const name = completedOrder && completedOrder.name
+    //const name = completedOrder && completedOrder.name
 
     return (
         <div className="summary-container">
             <h1>Thank you</h1>
-            <h2>{name}</h2>
+            <h2>{user.name}</h2>
             <h3>You order is on its way</h3>
             <h4>Summary of your order</h4>
             {summaryEls}
-            <Link to="/">Back to Home</Link>
+            <Link to="/" className="to-btn">Back to Home</Link>
 
         </div>
     )

@@ -15,12 +15,17 @@ type CartContextType = {
     setCartItems: Dispatch<SetStateAction<CartItem[]>>
     formData: FormData
     setFormData: Dispatch<SetStateAction<FormData>>
-    completedOrder: FormData | null
-    setCompletedOrder: Dispatch<SetStateAction<FormData | null>>
+    completedOrder: CompletedOrder | null
+    setCompletedOrder: Dispatch<SetStateAction<CompletedOrder | null>>
 }
 
 type CartContextProviderProps = {
     children: ReactNode;
+}
+
+type CompletedOrder = {
+    user: FormData
+    items: CartItem[]
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined)
@@ -33,7 +38,7 @@ function CartContextProvider({ children }: CartContextProviderProps) {
         password: "",
         cardNo: ""
     })
-    const [completedOrder, setCompletedOrder] = useState<FormData | null>(null)
+    const [completedOrder, setCompletedOrder] = useState<CompletedOrder | null>(null)
 
     return (
         <CartContext.Provider value={{
