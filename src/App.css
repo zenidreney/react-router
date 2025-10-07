@@ -156,6 +156,14 @@ form.checkout-form {
     align-self: center;
 }
 
+div.summary-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 
 /* Media Queries for larger screens */
 

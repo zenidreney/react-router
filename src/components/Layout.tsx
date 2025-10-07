@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router"
 import Cart from "../pages/Cart"
+import { useCart } from "../hooks/useCart"
 
 export default function Layout() {
 
@@ -9,6 +10,8 @@ export default function Layout() {
         color: "#DBD5A4"
 
     }
+
+    const { cartItems } = useCart()
 
     return (
         <main className="main-container">
@@ -31,7 +34,8 @@ export default function Layout() {
                 </NavLink>
             </nav>
 
-            <Cart />
+            {cartItems.length > 0 ?
+                <Cart /> : null }
 
             <Outlet />
 

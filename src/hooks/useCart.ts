@@ -9,7 +9,10 @@ function useCart() {
     if (!context) {
         throw new Error("Please use useCart in CartContextProvider")
     }
-    const { cartItems, setCartItems } = context
+    const {
+        cartItems, setCartItems,
+        formData, setFormData,
+        completedOrder, setCompletedOrder } = context
 
     function addToCart(herb: Herb) {
 
@@ -59,8 +62,12 @@ function useCart() {
     }
 
 
-    return { cartItems, setCartItems, addToCart, removeFromCart }
-
+    return {
+        cartItems, setCartItems,
+        formData, setFormData,
+        completedOrder, setCompletedOrder,
+        addToCart, removeFromCart,
+    }
 }
 
 export { useCart }

@@ -1,20 +1,15 @@
-import { useState } from "react"
 import { Link, useNavigate } from "react-router"
 import { useCart } from "../hooks/useCart"
 
 export default function Checkout() {
 
-    const { cartItems, addToCart, removeFromCart } = useCart()
+    const { cartItems, setCartItems, addToCart, removeFromCart, setCompletedOrder } = useCart()
     const navigate = useNavigate()
 
 
     const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)
 
-    const [formData, setFormData] = useState({
-        name: "",
-        password: "",
-        cardNo: ""
-    })
+    const  { formData, setFormData } = useCart()
 
     function handleFormInput(e: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = e.target
@@ -44,7 +39,13 @@ export default function Checkout() {
         }
 
 
-
+        setCartItems([])
+        
+        setCompletedOrder({
+            name: formData.name,
+            password: formData.password,
+            cardNo: formData.cardNo
+        })
 
         setFormData({
             name: "",
