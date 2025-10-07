@@ -11,15 +11,8 @@ body {
 }
 
 body {
-    background: #029b35;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #DBD5A4, #01c242);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #DBD5A4, #01c242);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: #DBD5A4;
     color: #161616;
-   
 }
 
 header {

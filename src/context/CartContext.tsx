@@ -6,7 +6,7 @@ import type { Dispatch, SetStateAction } from "react";
 type CartItem = Herb & { quantity: number }
 type FormData = {
     name: string,
-    password: string,
+    cvv: string,
     cardNo: string
 }
 
@@ -35,7 +35,7 @@ function CartContextProvider({ children }: CartContextProviderProps) {
     const [cartItems, setCartItems] = useState<CartItem[]>([])
     const [formData, setFormData] = useState<FormData>({
         name: "",
-        password: "",
+        cvv: "",
         cardNo: ""
     })
     const [completedOrder, setCompletedOrder] = useState<CompletedOrder | null>(null)

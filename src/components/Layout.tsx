@@ -7,7 +7,7 @@ export default function Layout() {
     const activeStyles = {
         fontWeight: "bold",
         textDecoration: "none",
-        color: "#DBD5A4"
+        color: "#161616"
 
     }
 

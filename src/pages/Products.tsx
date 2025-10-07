@@ -12,7 +12,7 @@ export default function Products() {
                 <Link to={`/products/${herb.name.toLowerCase()}`}  >
                     <div className="generic-herb-el">
                         <img className="generic-img profile" src={`/images/${herb.image}`} alt={herb.alt} />
-                        <p>
+                        <p className="name-p">
                             {herb.name}
                         </p>
                     <p className="back-to-p">Click for more info</p>
@@ -25,7 +25,6 @@ export default function Products() {
 
     return (
         <>
-            <p>I am Products</p>
             <div className="herb-els-container">
                 {herbEls}
             </div>

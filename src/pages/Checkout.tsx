@@ -13,7 +13,7 @@ export default function Checkout() {
 
     function handleFormInput(e: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = e.target
-        //console.log({ name, value })
+        console.log({ name, value })
 
         setFormData(prev => {
             return {
@@ -27,7 +27,7 @@ export default function Checkout() {
         e.preventDefault()
 
 
-        if (!formData.name || !formData.password || !formData.cardNo) {
+        if (!formData.name || !formData.cvv || !formData.cardNo) {
             alert("Please fill in")
         } else {
             alert("Your order has been submitted!")
@@ -47,7 +47,7 @@ export default function Checkout() {
         
         setFormData({
             name: "",
-            password: "",
+            cvv: "",
             cardNo: ""
         })
         setCartItems([])
@@ -79,11 +79,18 @@ export default function Checkout() {
             <Link to="/products" className="to-btn">Back to Products</Link>
             <div className="parent-checkout-container">
                 <div className="checkout-container">
-                    <h2>You are about to buy!</h2>
+                    {cartItems.length != 0 ?
+                        <h2>You are about to buy!</h2> :
+                        <h2>Nothing to buy!</h2>
+                        }
                     {cartEls}
                 </div>
                 <p>To be charged: {totalPrice} € </p>
-                <form
+                
+                {cartItems.length != 0 
+                
+                ?
+                    <form
                     className="checkout-form"
                     onSubmit={handleSubmit}>
                     <label htmlFor="name">Name</label>
@@ -93,12 +100,12 @@ export default function Checkout() {
                         name="name"
                         value={formData.name}
                         onChange={handleFormInput} />
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="cvv">CVV</label>
                     <input
                         type="password"
-                        id="password"
-                        name="password"
-                        value={formData.password}
+                        id="cvv"
+                        name="cvv"
+                        value={formData.cvv}
                         onChange={handleFormInput} />
                     <label htmlFor="cardNo">Card Number</label>
                     <input
@@ -110,6 +117,11 @@ export default function Checkout() {
                         onChange={handleFormInput} />
                     <button type="submit">Submit</button>
                 </form>
+                
+                :
+
+                <Link to="/products" className="to-btn">Back to Products</Link>
+                }
             </div>
         </div>
     )

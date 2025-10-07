@@ -20,7 +20,7 @@ export default function ProductDetails() {
     }
 
     return (
-        <>
+        <div className="herb-els-container">
             <HerbDetailContainer
                 imgSrc={`/images/${herb.image}`}
                 bgColor="rgba(48, 51, 48, 0.5)"
@@ -36,6 +36,6 @@ export default function ProductDetails() {
                 >Buy Now</button>
             </HerbDetailContainer>
 
-        </>
+        </div>
     )
 }
