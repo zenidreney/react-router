@@ -11,7 +11,6 @@ export default function Cart() {
 
     useEffect(() => {
 
-        console.log(cartRef.current)
         cartRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
 
     }, [cartItems])

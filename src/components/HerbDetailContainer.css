@@ -66,6 +66,9 @@ p.name {
 div.herb-info {
     display: flex;
     flex-wrap: wrap;
+    
+    justify-content: flex-start;
+    align-items: center;
     gap: 1em;
 }
 
@@ -102,7 +105,7 @@ div.content {
         display: flex;
         justify-content: center;
         padding: 1.5em 1em 1em;
-        max-width: 33%;
+        max-width: 43%;
     }
 
     img.profile {

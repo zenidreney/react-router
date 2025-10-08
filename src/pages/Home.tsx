@@ -3,12 +3,9 @@ import { herbsData } from "../data"
 import { Link } from "react-router"
 
 export default function Home() {
-    console.log(herbsData[0])
 
     const randomNum = Math.floor(Math.random() * herbsData.length)
     const randomTwo = Math.floor(Math.random() * herbsData.length)
-
-    console.log(randomNum)
 
     return (
         <section className="home">

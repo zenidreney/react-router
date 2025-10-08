@@ -32,16 +32,6 @@ footer > div.right {
 }
 
 
-
-
-
-img.logo-icon {
-    width: 20%;
-    height: 100%;
-    border-radius: 45px;
-    align-self: center;
-}
-
 div.right {
     display: flex;
     flex-direction: column;
@@ -58,4 +48,9 @@ div.left {
     display: flex;
     gap: 0.6em;
 align-items: center;
+}
+
+svg.social-logo {
+    color: #DBD5A4;
+    font-size: 1.5rem;
 }

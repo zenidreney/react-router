@@ -1,4 +1,4 @@
-import { useParams } from "react-router"
+import { useParams, Link } from "react-router"
 import { herbsData } from "../data"
 import { useCart } from "../hooks/useCart"
 import HerbDetailContainer from "../components/HerbDetailContainer"
@@ -30,10 +30,13 @@ export default function ProductDetails() {
             >
                 <p>{herb.description} </p>
                 <p>Benefits: {herb.benefits.join(", ")} </p>
-                <button
-                    className="buy-btn"
-                    onClick={() => addToCart(herb)}
-                >Buy Now</button>
+                <div className="btn-link-container">
+                    <button
+                        className="buy-btn"
+                        onClick={() => addToCart(herb)}
+                    >Buy Now</button>
+                    <Link to="/products" className="to-btn">More Proucts</Link>
+                </div>
             </HerbDetailContainer>
 
         </div>

@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router"
 import { useCart } from "../hooks/useCart"
+import { useScrollToTop } from "../hooks/useScrollToTop"
 import Header from "./Header"
 import Footer from "./Footer"
 
@@ -16,7 +17,10 @@ export default function Layout() {
 
     const { cartItems } = useCart()
 
+    useScrollToTop()
+    
     return (
+
         <main className="main-container">
 
             <Header />
@@ -40,7 +44,7 @@ export default function Layout() {
                 <Cart /> : null}
 
             <Outlet />
-            
+
             <Footer />
         </main>
 

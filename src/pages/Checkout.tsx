@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router"
 import { useCart } from "../hooks/useCart"
+import "./Checkout.css"
 
 export default function Checkout() {
 
@@ -29,6 +30,7 @@ export default function Checkout() {
 
         if (!formData.name || !formData.cvv || !formData.cardNo) {
             alert("Please fill in")
+            return
         } else {
             alert("Your order has been submitted!")
             console.log("Submitted", {

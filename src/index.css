@@ -28,6 +28,28 @@ a:hover {
 }
 
 
+a.badge-link {
+    color: #161616;
+}
+
+
+
+button {
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #DBD5A4;
+    color: #161616;
+    margin-inline: 0.1em;
+}
+
+button:hover,
+button:focus {
+    background-color: #161616;
+    color: #DBD5A4;
+}
+
+
 main {
     padding: 10px 10px 0 10px;
     display: flex;
@@ -36,8 +58,53 @@ main {
     flex-direction: column;
 }
 
+nav {
+    padding: 0.3em 0;
+    border-radius: 3px;
+    border: 1px solid rgba(22, 22, 22, 0.5);
+}
+
 /* UTILITY */
+
+.block-padding {
+    padding-block: 0.65em;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
 
 .bold-text {
     font-weight: 600;
+}
+
+a.to-btn,
+p.back-to-p {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #161616;
+    padding: 0.5em 0.6em;
+    border-radius: 4px;
+    display: inline-block;
+    margin-inline: 0.5em;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+a.back-to-btn:hover,
+a.back-to-btn:focus {
+    text-decoration: none;
+}
+
+
+
+img.logo-icon {
+    width: 20%;
+    height: 100%;
+    border-radius: 25px;
+    align-self: center;
+}
+
+button.buy-btn {
+
+    padding: 1em 2em;
+    margin-block: 1em 0.3em;
+    border-radius: 5px;
 }
