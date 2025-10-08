@@ -20,9 +20,8 @@ export default function Header() {
                 <a href="https://www.instagram.com/"
                 ><CiInstagram className="social-logo"/></a
                 >
-
-
             </div>
         </header>
+        
     )
 }

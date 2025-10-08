@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router"
 import { useCart } from "../hooks/useCart"
 import Header from "./Header"
+import Footer from "./Footer"
 
 import Cart from "../pages/Cart"
 
@@ -19,6 +20,7 @@ export default function Layout() {
         <main className="main-container">
 
             <Header />
+
             <nav>
                 <NavLink to="/" style={({ isActive }) => isActive ? activeStyles : undefined}>
                     Home
@@ -35,10 +37,11 @@ export default function Layout() {
             </nav>
 
             {cartItems.length > 0 ?
-                <Cart /> : null }
+                <Cart /> : null}
 
             <Outlet />
-
+            
+            <Footer />
         </main>
 
     )

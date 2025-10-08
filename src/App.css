@@ -1,3 +1,5 @@
+
+
 img.generic-img,
 img.cart-img {
     border-radius: 4px;
@@ -104,8 +106,7 @@ div.herb-info {
 
 div.herb-els-container {
     position: relative;
-
-
+height: 100vh;
     border-radius: 16px;
     max-width: 800px;
     display: flex;
@@ -127,12 +128,11 @@ div.herb-els-container::before {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 12px;
     filter: blur(4px);
-
-    top: -3.5%;
-    left: -5%;
     bottom: -5%;
     width: 110%;
+    max-width: 100vw;
     z-index: -1;
+    height: 100%;
 }
 
 div.generic-herb-el-container {
@@ -244,6 +244,29 @@ div.summary-container > h4 {
 
 div.summary-container > a {
     margin-top: 1em;
+}
+
+section.contact {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 720px;
+}
+
+section.contact > div.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+div.contact-info a {
+    padding: 0;
+    color: rgb(15, 58, 34);
+    text-decoration: underline;
 }
 
 
