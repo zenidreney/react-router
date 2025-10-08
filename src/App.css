@@ -50,9 +50,6 @@ button.buy-btn {
     border-radius: 5px;
 }
 
-header>h1 {
-    text-shadow: 1px 1px 2px rgb(106, 158, 28);
-}
 
 section.home {
     display: flex;
@@ -75,7 +72,7 @@ section.home>p:nth-child(even) {
 }
 
 section.home>img {
-    width: 30%;
+    width: 80%;
     border-radius: 5px;
 }
 
@@ -256,6 +253,11 @@ div.summary-container > a {
 /* TABLET */
 
 @media (min-width: 600px) {
+
+    section.home > img {
+        width: 40%;
+    }
+
     img.generic-img {
         width: 50%;
         height: 10vh;

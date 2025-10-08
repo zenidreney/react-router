@@ -1,6 +1,8 @@
 import { NavLink, Outlet } from "react-router"
-import Cart from "../pages/Cart"
 import { useCart } from "../hooks/useCart"
+import Header from "./Header"
+
+import Cart from "../pages/Cart"
 
 export default function Layout() {
 
@@ -16,9 +18,7 @@ export default function Layout() {
     return (
         <main className="main-container">
 
-            <header>
-                <h1>Mock E-Plant Shop</h1>
-            </header>
+            <Header />
             <nav>
                 <NavLink to="/" style={({ isActive }) => isActive ? activeStyles : undefined}>
                     Home
