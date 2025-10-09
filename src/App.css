@@ -1,3 +1,29 @@
+/* ALPHABETIC LIST OF APP PAGE COMPONENTS */
+
+/* ABOUT STYLES */
+div.about-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3em;
+}
+
+div.about-container>div {
+    display: inline;
+}
+
+img.about-logo {
+    width: 50%;
+    max-width: 320px;
+    height: 50%;
+    align-self: center;
+    border-radius: 3px;
+    box-shadow: 1px 2px 3px #161616;
+    opacity: 0.9;
+    animation: pulseColor 5s infinite ease-in-out;
+}
+
+
+
 /* CART AND CHECKOUT STYLES */
 div.cart-container {
     background-color: rgba(255, 255, 255, 0.25);
@@ -12,8 +38,11 @@ div.cart-container {
     box-shadow: 1px 1px 1px rgba(22, 22, 22, 0.2);
 }
 
-/* CART STYLES */
+div.cart-buttons-container {
+    margin-top: 0.3em;
+}
 
+/* CART STYLES */
 img.cart-img {
     border-radius: 4px;
     width: 27%;
@@ -24,6 +53,11 @@ div.sub-total-container {
 }
 
 /* CHECKOUT STYLES */
+
+div.checkout-nav {
+    margin-top: 1em;
+    text-align: center;
+}
 
 div.parent-checkout-container {
     display: flex;
@@ -100,6 +134,7 @@ div.contact-info a {
 }
 
 
+
 /* HOME STYLES */
 
 
@@ -127,7 +162,9 @@ section.home>p:nth-child(even) {
 section.home>img {
     width: 80%;
     border-radius: 5px;
+    animation: glowColor 5s infinite ease-in-out;
 }
+
 
 section.home h3,
 h4 {
@@ -234,10 +271,17 @@ div.summary-container>a {
 @media (min-width: 600px) {
 
 
+
     /* HOME COMPONENT */
     section.home>img {
         width: 40%;
     }
+
+    /* CHECKOUT COMPONENT */
+
+    div.checkout-nav {
+    text-align: left;
+}
 
     /* PRODUCTS COMPONENT */
     img.generic-img {
@@ -286,16 +330,71 @@ div.summary-container>a {
 
 /* ANIMATIONS */
 
+.change-color {
+    animation: changeColor 2s ease-in-out infinite;
+}
+
 @keyframes changeColor {
     0% {
         color: #161616;
     }
 
-    50% {
+    25% {
         color: #916477;
     }
 
-    100% {
+    75% {
         color: #029b35;
     }
+
+    100% {
+        color: #161616;
+    }
+}
+
+.pulse-color {
+    animation: pulseColor 5s infinite ease-in-out;
+
+}
+
+@keyframes pulseColor {
+    0% {
+        filter: hue-rotate(0deg)
+    }
+
+    50% {
+        filter: hue-rotate(100deg)
+    }
+
+    100% {
+        filter: hue-rotate(0deg)
+    }
+
+}
+
+.glow-color {
+    animation: glowColor 5s infinite ease-in-out;
+}
+
+@keyframes glowColor {
+    0% {
+        filter: drop-shadow(0 0 5px #029b35)
+    }
+
+    20% {
+        filter: drop-shadow(3px 3px 15px #029b35)
+    }
+
+    60% {
+        filter: drop-shadow(5px 5px 25px #029b35)
+    }
+
+    50% {
+        filter: drop-shadow(3px 3px 15px #029b35)
+    }
+
+    100% {
+        filter: drop-shadow(0 0 5px #029b35)
+    }
+
 }

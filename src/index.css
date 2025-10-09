@@ -37,12 +37,14 @@ a.badge-link {
 
 
 button {
-    border: none;
+    border: 1px solid rgba(22, 22, 22, 0.3);
     border-radius: 3px;
+    font-weight: 600;
     cursor: pointer;
     background-color: #DBD5A4;
     color: #161616;
     margin-inline: 0.1em;
+    padding: 0.35em 1em;
 }
 
 

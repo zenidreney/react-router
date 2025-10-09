@@ -28,8 +28,10 @@ export default function Cart() {
                     }
                     <p>sub-total: <span className="bold-text">{herb.price} €</span></p>
 
-                    <button onClick={() => addToCart(herb)}>Add</button>
-                    <button onClick={() => removeFromCart(herb)}>Remove</button>
+                    <div className="cart-buttons-container">
+                        <button onClick={() => addToCart(herb)}>Add</button>
+                        <button onClick={() => removeFromCart(herb)}>Remove</button>
+                    </div>
                 </div>
 
             </div>

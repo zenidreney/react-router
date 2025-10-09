@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router"
 import { useCart } from "../hooks/useCart"
-import "./Checkout.css"
 
 export default function Checkout() {
 
@@ -62,8 +61,10 @@ export default function Checkout() {
                     }
                     <div>sub-total: <span className="bold-text">{herb.price} €</span></div>
 
-                    <button onClick={() => addToCart(herb)}>Add</button>
-                    <button onClick={() => removeFromCart(herb)}>Remove</button>
+                    <div className="cart-buttons-container">
+                        <button onClick={() => addToCart(herb)}>Add</button>
+                        <button onClick={() => removeFromCart(herb)}>Remove</button>
+                    </div>
                 </div>
 
             </div>
@@ -72,8 +73,10 @@ export default function Checkout() {
 
     return (
         <div>
-            <Link to="/" className="to-btn">Back to Home</Link>
-            <Link to="/products" className="to-btn">Back to Products</Link>
+            <div className="checkout-nav">
+                <Link to="/" className="to-btn">Back to Home</Link>
+                <Link to="/products" className="to-btn">Back to Products</Link>
+            </div>
             <div className="parent-checkout-container">
                 <div className="checkout-container">
                     {cartItems.length != 0 ?

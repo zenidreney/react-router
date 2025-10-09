@@ -14,7 +14,7 @@ export default function Contact() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"></iframe>
         <div className="contact-info">
-          <img src="/images/mix-of-herbs.jpg" className="logo-icon" />
+          <img src="/images/mix-of-herbs.jpg" className="logo-icon pulse-color glow-color" />
                 <div>
                     <h4>Mock Shop </h4>
                     <p>Contact:</p>

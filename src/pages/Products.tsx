@@ -18,7 +18,8 @@ export default function Products() {
                     <p className="back-to-p">Click for more info</p>
                     </div>
                 </Link>
-                <button onClick={() => addToCart(herb)}>Add to Cart</button>
+                <button onClick={() => addToCart(herb)}
+                    className="change-color">Add to Cart</button>
             </div>
         )
     })
