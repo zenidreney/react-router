@@ -2,12 +2,32 @@
 header {
     box-sizing: border-box;
     font-family: "Zalando Sans", sans-serif;
-    padding-bottom: 3%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
-header > h1 {
-    text-shadow: 1px 1px 2px rgb(106, 158, 28);
+
+div.name-container {
+    margin: 1em 0.5em 0;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+    font-size: 83%;
+}
+
+div.name-container > h1 {
+    text-shadow: 1px 1px 1px rgb(106, 158, 28);
+    
+}
+
+
+div.name-container > svg {
+    font-size: 3.2em;
+    animation: changeColor 13s ease-in-out infinite;
 }
 
 div.social-icons {

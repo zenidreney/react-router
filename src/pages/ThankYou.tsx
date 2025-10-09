@@ -5,7 +5,6 @@ export default function ThankYou() {
 
     const { completedOrder } = useCart()
 
-    console.log(completedOrder)
 
     if(!completedOrder) {
         return(
@@ -19,6 +18,9 @@ export default function ThankYou() {
     }
     
     const { user, items } = completedOrder
+
+    const totalPrice = items.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)
+
 
     const summaryEls = items.map((herb, index) => {
         return(
@@ -37,7 +39,6 @@ export default function ThankYou() {
         )
     }) 
 
-    //const name = completedOrder && completedOrder.name
 
     return (
         <div className="summary-container">
@@ -46,6 +47,7 @@ export default function ThankYou() {
             <h3>You order is on its way</h3>
             <h4>Summary of your order</h4>
             {summaryEls}
+            <p>Total Paid: {totalPrice} €</p>
             <Link to="/" className="to-btn">Back to Home</Link>
         </div>
     )

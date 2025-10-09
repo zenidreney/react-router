@@ -1,0 +1,22 @@
+div.body-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+main {
+    padding: 10px 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+nav {
+    padding: 0.3em 0;
+    border-radius: 3px;
+    border: 1px solid rgba(22, 22, 22, 0.5);
+}

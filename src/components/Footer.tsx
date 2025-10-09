@@ -19,16 +19,16 @@ export default function Footer() {
             </div>
 
             <div className="right">
-                <p>Follow us:</p>
+                <p>Follow us on</p>
                 <div className="social-icons">
                     <a href="https://www.youtube.com/"
-                    ><CiYoutube className="social-logo" /></a
+                    ><CiYoutube className="social-logo-footer" /></a
                     >
                     <a href="https://www.pinterest.com/"
-                    ><RiPinterestLine className="social-logo" /></a
+                    ><RiPinterestLine className="social-logo-footer" /></a
                     >
                     <a href="https://www.instagram.com/"
-                    ><CiInstagram className="social-logo" /></a
+                    ><CiInstagram className="social-logo-footer" /></a
                     >
                 </div>
             </div>

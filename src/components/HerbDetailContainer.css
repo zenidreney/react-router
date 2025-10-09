@@ -72,6 +72,11 @@ div.herb-info {
     gap: 1em;
 }
 
+h1.herb-header {
+    width: 100%;
+}
+
+
 
 div.badge-container {
     flex-grow: 1;

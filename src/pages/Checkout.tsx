@@ -14,7 +14,6 @@ export default function Checkout() {
 
     function handleFormInput(e: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = e.target
-        console.log({ name, value })
 
         setFormData(prev => {
             return {
@@ -28,17 +27,13 @@ export default function Checkout() {
         e.preventDefault()
 
 
-        if (!formData.name || !formData.cvv || !formData.cardNo) {
-            alert("Please fill in")
-            return
-        } else {
             alert("Your order has been submitted!")
             console.log("Submitted", {
                 items: cartItems,
                 user: formData
             })
             navigate("/thank-you")
-        }
+        
 
         setCompletedOrder({
             user: formData,
@@ -99,6 +94,7 @@ export default function Checkout() {
                         <input
                             type="text"
                             id="name"
+                            required
                             name="name"
                             value={formData.name}
                             onChange={handleFormInput} />
@@ -106,6 +102,7 @@ export default function Checkout() {
                         <input
                             type="password"
                             id="cvv"
+                            required
                             name="cvv"
                             value={formData.cvv}
                             onChange={handleFormInput} />
@@ -114,6 +111,7 @@ export default function Checkout() {
                             type="text"
                             inputMode="numeric"
                             id="cardNo"
+                            required
                             name="cardNo"
                             value={formData.cardNo}
                             onChange={handleFormInput} />

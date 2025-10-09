@@ -44,7 +44,7 @@ export default function HerbDetailContainer({
 
             <div className="text-container">
                 <div className="herb-info">
-                    <h1>{name}</h1>
+                    <h1 className="herb-header">{name}</h1>
                     <div className="badge-container">
                         {isCulinary ? <Badge>Culinary</Badge>
                             : <Badge color="red">Not edible</Badge>}
