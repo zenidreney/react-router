@@ -2,13 +2,15 @@
     outline: 1px dotted violet;
 } */
 
+
 html,
 body {
     font-family: Montserrat, sans-serif;
     box-sizing: border-box;
     margin: 0;
-    max-width: 100vw;
-    overflow-x: hidden;
+    padding: 0;
+   /*  max-width: 100vw;
+    overflow-x: hidden; */
 }
 
 body {
@@ -17,9 +19,10 @@ body {
 }
 
 a {
+    box-sizing: border-box;
     color: #161616;
     text-decoration: none;
-    padding: 15px
+    padding: 15px;
 }
 
 
