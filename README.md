@@ -17,7 +17,7 @@ This repo is part of my portfolio, crafted to showcase my core skills.
 
 ## 📚 What You'll Find
 
-- Example implementations of nested, dynamic, and protected routes.
+- Example implementations of nested and dynamic routes.
 - TypeScript interfaces and type-guarding patterns.
 - Modular file organization for scalability.
 - Experimentation with advanced routing scenarios.
