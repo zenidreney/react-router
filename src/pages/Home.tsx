@@ -10,10 +10,10 @@ export default function Home() {
     return (
         <section className="home">
             <img src="/images/mix-of-herbs.jpg" />
-            <h1>Mock Shop Real Plants</h1>
-            <p>Find the variety you have been looking for.</p>
-            <p>Super organic pure herbs and plants.</p>
-            <p>See more in our product page.</p>
+            <h1 className="align-text">Mock Shop Real Plants</h1>
+            <p className="align-text">Find the variety you have been looking for.</p>
+            <p className="align-text">Super organic pure herbs and plants.</p>
+            <p className="align-text">See more in our product page.</p>
             <Link to={`/products/${herbsData[randomNum].name.toLowerCase()}`} >
                 <div className="promo-home">
                     <HerbDetailContainer
@@ -36,8 +36,8 @@ export default function Home() {
                     </HerbDetailContainer>
                 </div>
             </Link>
-            <h3>Go ahead and check a super organic new hype plants in the shop.</h3>
-            <h4>Click the link below</h4>
+            <h3 className="align-text">Go ahead and check a super organic new hype plants in the shop.</h3>
+            <h4 className="align-text">Click the link below</h4>
             <Link to="/products" className="to-btn">Products</Link>
 
             

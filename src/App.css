@@ -3,12 +3,20 @@
 /* ABOUT STYLES */
 div.about-container {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: space-evenly;
-    gap: 3em;
+    margin-top: 1em;
+    gap: 2em;
 }
 
 div.about-container>div {
-    display: inline;
+    width: 90%;
+    display: flex;
+            line-height: 1.5;
+
+    text-align: center;
+    flex-direction: column;
+    gap: 0.5em;
 }
 
 img.about-logo {
@@ -144,6 +152,7 @@ section.home {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     margin-top: 1em;
     gap: 1em;
     font-size: 1.2rem;
@@ -271,6 +280,15 @@ div.summary-container>a {
 @media (min-width: 600px) {
 
 
+    /* ABOUT COMPONENT */
+div.about-container {
+    flex-direction: row;
+}
+
+
+    div.about-container>div {
+        text-align: left;
+    }
 
     /* HOME COMPONENT */
     section.home>img {
@@ -280,8 +298,8 @@ div.summary-container>a {
     /* CHECKOUT COMPONENT */
 
     div.checkout-nav {
-    text-align: left;
-}
+        text-align: left;
+    }
 
     /* PRODUCTS COMPONENT */
     img.generic-img {
@@ -297,8 +315,10 @@ div.summary-container>a {
 
 /* DESKTOP */
 
+
 @media (min-width: 1250px) {
 
+ 
     /* PRODUCTS COMPONENT */
     img.generic-img {
         width: 86%;
