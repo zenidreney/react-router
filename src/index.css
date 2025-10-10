@@ -86,6 +86,17 @@ p.back-to-p {
     font-size: 1rem;
 }
 
+p.button-p {
+    border: 1px solid rgba(22, 22, 22, 0.6);
+    margin-top: 0.5em;
+    width: fit-content;
+    padding: 0.3em 0.6em;
+    border-radius: 3px;
+    background-color: #DBD5A4;
+    color: #161616;
+    text-shadow: none;
+}
+
 a.back-to-btn:hover,
 a.back-to-btn:focus {
     text-decoration: none;
