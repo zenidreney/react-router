@@ -1,9 +1,9 @@
 import { NavLink, Outlet } from "react-router"
 import { useCart } from "../hooks/useCart"
 import { useScrollToTop } from "../hooks/useScrollToTop"
-import Header from "./Header"
-import Footer from "./Footer"
 import Cart from "../pages/Cart"
+import Footer from "./Footer"
+import Header from "./Header"
 import "./Layout.css"
 
 export default function Layout() {
